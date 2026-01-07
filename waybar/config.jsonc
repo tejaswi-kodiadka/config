@@ -1,0 +1,95 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 0,
+  "margin-top": 7,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
+  "modules-left": [
+    "niri/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "network",
+    "backlight",
+    "pulseaudio",
+    "battery"
+  ],
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    }
+  },
+
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤟 ", "󰤢 ", "󰤥 "],
+    "format-ethernet": "󰈀 ",
+    "on-click": "nmtui",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "{:%d-%m-%Y | %H:%M | %A}",
+    "rotate": 0,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1,
+      "on-right-click": "mode",
+      "format": {
+        "months": "<span color='#3ffad3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "states": {
+      "good": 90,
+      "warning": 30,
+      "critical": 20
+    },
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "<span color='#a6d189'>󱐋</span>",
+    "format-plugged": "󰂄"
+  },
+
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+    "scroll-step": 5,
+    "min-length": 2
+  },
+
+  "pulseaudio": {
+    "device": "amdgpu_bl1",
+    "format": "{icon} {volume}%",
+    "format-icons": ["", "", ""],
+    "scroll-step": 5,
+    "min-length": 2
+  }
+}
