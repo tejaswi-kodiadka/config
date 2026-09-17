@@ -8,6 +8,7 @@ input {
     touchpad {
         tap
         natural-scroll
+        dwt
     }
 
     mouse {
@@ -33,7 +34,7 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 12
+    gaps 6
     center-focused-column "never"
     preset-column-widths {
         proportion 0.5
@@ -41,7 +42,7 @@ layout {
     }
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 3
+        width 2.5
         active-color "#7fc8ff"
         inactive-color "#505050"
     }
@@ -53,6 +54,7 @@ layout {
         offset x=0 y=5
         color "#0007"
     }
+    background-color "transparent"
 }
 
 layer-rule {
@@ -102,8 +104,7 @@ layer-rule {
   opacity 0.95
 
   match namespace="^wallpaper$"
-  place-within-backdrop false
-
+  place-within-backdrop true
 }
 
 window-rule {
@@ -135,7 +136,7 @@ binds {
 
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+Alt+S hotkey-overlay-title=null { spawn "sh" "-c" "pkill orca || exec orca"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
