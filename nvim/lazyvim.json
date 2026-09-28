@@ -1,7 +1,10 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.luasnip",
+    "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.lang.git",
     "lazyvim.plugins.extras.lang.lean",
+    "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.tex"
   ],
   "install_version": 8,
