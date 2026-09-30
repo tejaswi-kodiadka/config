@@ -1,62 +1,47 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "ignore-gtk-theme": true,
+
   "positionX": "right",
   "positionY": "top",
-  "layer": "overlay",
+  "control-center-positionX": "none",
+  "control-center-positionY": "none",
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "control-center-margin-left": 8,
+  "control-center-width": 500,
+  "control-center-height": -1,
+  "fit-to-screen": false,
+  "layer-shell-cover-screen": true,
+
   "layer-shell": true,
-  "cssPriority": "application",
-  "control-center-margin-top": 5,
-  "control-center-margin-bottom": 5,
-  "control-center-margin-right": 5,
-  "control-center-margin-left": 5,
+  "layer": "overlay",
   "control-center-layer": "overlay",
-  "control-center-exclusive-zone": true,
-  "notification-2fa-action": true,
+  "cssPriority": "user",
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "notification-inline-replies": true,
   "timeout": 10,
   "timeout-low": 5,
   "timeout-critical": 0,
   "notification-window-width": 500,
-  "notification-window-height": 500,
-  "notification-window-preferred-output": "",
   "keyboard-shortcuts": true,
-  "notification-grouping": true,
-  "image-visibility": "when-available",
+  "image-visibility": "always",
   "transition-time": 200,
-  "hide-on-clear": false,
+  "hide-on-clear": true,
   "hide-on-action": true,
-  "text-empty": "No Notifications",
-  "fit-to-screen": true,
-  "relative-timestamps": true,
-  "control-center-height": 500,
-  "control-center-width": 400,
-  "control-center-preferred-output": "",
-  "layer-shell-cover-screen": true,
-  "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-
-  "notification-visibility": {
-    "Spotify": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify",
-      "desktop-entry": "spotify.desktop"
-    }
-  },
+  "script-fail-notify": true,
 
   "widgets": [
     "inhibitors",
-    "buttons-grid",
-    "volume",
-    "backlight",
+    "dnd",
     "mpris",
-    "title",
-    "notifications",
-    "dnd"
+    "notifications"
   ],
-
   "widget-config": {
+    "notifications": {
+      "vexpand": false
+    },
     "inhibitors": {
       "text": "Inhibitors",
       "button-text": "Clear All",
@@ -64,8 +49,8 @@
     },
     "title": {
       "text": "Notifications",
-      "clear-all-button": true,
-      "button-text": " Clear All"
+      "clear-all-button": false,
+      "button-text": "Clear All"
     },
     "dnd": {
       "text": "Do Not Disturb"
@@ -75,63 +60,7 @@
       "text": "Label Text"
     },
     "mpris": {
-      "blacklist": [],
-      "autohide": true,
-      "show-album-art": "always",
-      "loop-carousel": false
-    },
-    "buttons-grid": {
-      "buttons-per-row": 3,
-      "actions": [
-        {
-          "label": "",
-          "type": "toggle",
-          "active": true,
-          "command": "sh -c '~/.config/swaync/scripts/toggle_bluetooth.sh'",
-          "update-command": "sh -c 'set +e;[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
-        },
-        {
-          "label": "󰂯",
-          "type": "toggle",
-          "active": true,
-          "command": "sh -c '~/.config/swaync/scripts/toggle_bluetooth.sh'",
-          "update-command": "sh -c 'set +e;bluetoothctl show | grep -qF Powered:\\ yes && echo true || echo false'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": true,
-          "command": "swayosd-client --output-volume mute-toggle",
-          "update-command": "sh -c 'set +e;pactl get-sink-mute @DEFAULT_SINK@ | grep -q \"no\" && echo true || echo false'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": true,
-          "command": "swayosd-client --input-volume mute-toggle",
-          "update-command": "sh -c 'set +e;pactl get-source-mute @DEFAULT_SOURCE@ | grep -q \"no\" && echo true || echo false'"
-        },
-
-        {
-          "label": "",
-          "type": "toggle",
-          "active": true,
-          "command": "sh -c 'swaync-client -d -sw'",
-          "update-command": "sh -c 'set +e;swaync-client -D'"
-        },
-      ]
-    },
-    "volume": {
-      "label": "",
-      "show-per-app-icon": true,
-      "show-per-app": true
-    },
-    "backlight": {
-      "label": "󰃠",
-      "device": "amdgpu_bl1",
-      "subsystem": "backlight",
-      "min": 5
+      "autohide": true
     }
-  },
-  "script-fail-notify": false,
+  }
 }

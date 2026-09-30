@@ -265,4 +265,5 @@ binds {
 
     Mod+Shift+P { power-off-monitors; }
     Mod+Shift+L {spawn "wlogout";}
+    Mod+Shift+N {spawn "swaync-client" "-t" "-sw";}
 }
