@@ -1,3 +1,7 @@
+* {
+  font-size: 14px;
+}
+
 :root {
   --border-radius: 22px;
   --cc-bg: transparent;

@@ -55,16 +55,16 @@ tooltip {
 }
 
 #battery {
-  color: #A6D189;
+  color: #90EE90;
   background: rgba(23, 23, 23, 0);
   opacity: 1;
   margin: 0px 0px 0px 0px;
   padding-left: 10px;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 #battery.charging, #battery.plugged {
-	color: #E8EDF0;
+	color: #7CFC00;
 }
 
 #battery.critical:not(.charging) {
@@ -110,10 +110,10 @@ tooltip {
 
 #custom-notification {
   font-weight: 900;
-  color: #6F8FDB;
+  color: #FFFF00;
   background: rgba(22, 19, 32, 0);
   opacity: 1;
   margin: 0px 0px 0px 0px;
-  padding-right: 10px;
+  padding-right: 25px;
   padding-left: 10px;
 }

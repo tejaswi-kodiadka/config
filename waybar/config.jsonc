@@ -19,11 +19,11 @@
   ],
 
   "modules-right": [
-    "custom/notification",
     "network",
     "backlight",
     "pulseaudio",
-    "battery"
+    "battery",
+    "custom/notification"
   ],
 
   "niri/workspaces": {
